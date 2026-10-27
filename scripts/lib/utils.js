@@ -570,6 +570,13 @@ export const PROVIDER_PLACEHOLDERS = {
     ask_instruction: 'Ask the user directly to clarify what you cannot infer.',
     command_prefix: '/'
   },
+
+  'devin': {
+    model: 'Devin',
+    config_file: 'AGENTS.md',
+    ask_instruction: 'Ask with the ask_user_question tool when available, or directly in chat if it is not, and wait for the answer before continuing.',
+    command_prefix: '/'
+  },
   zcode: {
     // ZCode hosts any model (GLM, Claude, GPT, ...) and reads AGENTS.md as its
     // workspace instruction file, so it follows the pi/hermes phrasing for
@@ -588,6 +595,7 @@ export const PROVIDER_BLOCK_TAGS = new Set([
   'claude-code',
   'codex',
   'cursor',
+  'devin',
   'dsh',
   'gemini',
   'github',
