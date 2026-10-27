@@ -30,10 +30,8 @@ Last verified: 2026-04-28 (subagent landscape spot-checked 2026-06-28; Mistral V
 | Grok Build | https://docs.x.ai/build/features/skills-plugins-marketplaces |
 | Hermes Agent | https://hermes-agent.nousresearch.com/docs/ |
 | Antigravity | https://antigravity.google/docs/skills |
-
 | Devin | https://docs.devin.ai/cli/extensibility/skills/overview |
 | ZCode | https://zcode.z.ai/en/docs/skill |
-
 
 ## Spec Compliance
 
@@ -112,10 +110,8 @@ Notes:
 | Grok Build | `.grok/skills/` (project), `~/.grok/skills/` (global) | `.agents/skills/`, `.claude/skills/`, `.cursor/skills/` (Claude/Cursor compat, configurable) |
 | Hermes Agent | `.hermes/skills/` (project), `~/.hermes/skills/` (global) | `skills.external_dirs` config (no automatic `.agents/skills/` fallback) |
 | Antigravity | `.agent/skills/` (project), `~/.gemini/config/skills/` (global) | `.agents/skills/` (project), `~/.agents/skills/` (global) |
-
 | Devin | `.devin/skills/` (project), `~/.config/devin/skills/` (global, shared by CLI and Desktop; `%APPDATA%\devin\skills\` on Windows) | `.agents/skills/` and `.cognition/skills/` (project), `~/.agents/skills/` and `~/.config/cognition/skills/` (global), `.windsurf/skills/` (legacy), `~/.codeium/windsurf/skills/` (Desktop legacy global). The CLI also imports `.claude/skills/`, `.cursor/skills/`, and `.github/skills/` through `read_config_from`; Devin web scans `.github/skills/`, `.claude/skills/`, `.cognition/skills/`, and `.windsurf/skills/` |
 | ZCode | `.zcode/skills/` (project), `~/.zcode/skills/` (global) | `.agents/skills/` (project), `~/.agents/skills/` (global) |
-
 
 All harnesses support the `{skill-name}/SKILL.md` directory structure with optional `reference/`, `scripts/`, and `assets/` subdirectories.
 
