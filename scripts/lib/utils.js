@@ -577,7 +577,7 @@ export const PROVIDER_PLACEHOLDERS = {
     model: 'the model',
     config_file: 'AGENTS.md',
     ask_instruction: 'Ask the user directly to clarify what you cannot infer.',
-    command_prefix: '/'
+    command_prefix: '$'
   }
 };
 

@@ -100,7 +100,7 @@ pub fn detect(env: &Env, cwd: &str) -> Provider {
             .unwrap_or(SOURCE_PROVIDER)
             .to_string(),
     };
-    let command_prefix = if id == "codex" { "$" } else { "/" }.to_string();
+    let command_prefix = if id == "codex" || id == "zcode" { "$" } else { "/" }.to_string();
     let command = format!("{}impeccable", command_prefix);
     let self_raw = match env.get("IMPECCABLE_SELF").filter(|v| !v.trim().is_empty()) {
         Some(v) => v.trim().to_string(),

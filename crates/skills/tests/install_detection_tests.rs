@@ -1,6 +1,8 @@
 //! Detection coverage for env-relocated global harness dirs: `$DSH_HOME`
 //! (DeepSeek Harness) must be detected even when `~/.dsh` itself does not
 //! exist, and must be ignored when it points outside home.
+//! Also pins the plain-home `.zcode` hint (ZCode reaches detection through
+//! the generic home-hint path, like other plain-home providers).
 
 use std::collections::HashMap;
 
@@ -74,4 +76,20 @@ fn dsh_home_outside_home_falls_back_to_dot_dsh() {
     std::fs::create_dir_all(jsp::join(&[&home, ".dsh"])).unwrap();
     let found = dsh_detections(&sys, &project);
     assert_eq!(found, vec![jsp::join(&[&home, ".dsh"])]);
+}
+
+#[test]
+fn zcode_home_hint_dir_is_detected() {
+    let home = temp_root("zcode-hint-detect");
+    let project = temp_root("zcode-hint-project");
+    std::fs::create_dir_all(jsp::join(&[&home, ".zcode"])).unwrap();
+    let sys = sys_with(&home, &[]);
+
+    let found: Vec<String> = sys
+        .collect_install_detections(&project)
+        .into_iter()
+        .filter(|d| d.provider == ".zcode" && d.scope == Scope::User)
+        .map(|d| d.found_path)
+        .collect();
+    assert_eq!(found, vec![jsp::join(&[&home, ".zcode"])]);
 }

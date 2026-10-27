@@ -12,7 +12,7 @@ const HARNESS_DIRS: [&str; 20] = [
     ".claude", ".cursor", ".dsh", ".gemini", ".codex", ".agents", ".agent", ".github", ".grok", ".hermes", ".trae", ".trae-cn",
     ".pi", ".omp", ".opencode", ".kiro", ".rovodev", ".vibe", ".qoder", ".zcode",
 ];
-const CODEX_HARNESSES: [&str; 2] = [".codex", ".agents"];
+const CODEX_HARNESSES: [&str; 3] = [".codex", ".agents", ".zcode"];
 pub const VALID_COMMANDS: [&str; 24] = [
     "craft", "init", "extract", "document", "shape", "critique", "audit", "polish", "bolder", "quieter", "distill",
     "harden", "onboard", "live", "animate", "colorize", "typeset", "layout", "delight", "overdrive", "clarify",
